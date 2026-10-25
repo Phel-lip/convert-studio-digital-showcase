@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Instagram, MessageCircle } from "lucide-react";
 
 import { DemoCard, type Demo } from "@/components/site/DemoCard";
-import { PlanCard, type Plan } from "@/components/site/PlanCard";
+import { OffersSection } from "@/components/site/OffersSection";
 import { SegmentCard, type Segment } from "@/components/site/SegmentCard";
 import demoLanding from "@/assets/demo-landing.jpg";
 import demoCardapio from "@/assets/demo-cardapio.jpg";
@@ -114,67 +114,9 @@ const segments: Segment[] = [
 const included: string[] = [
   "Design personalizado",
   "Adaptado para celular e computador",
-  "Domínio e hospedagem",
+  "Endereço Convert e hospedagem por 12 meses",
   "Publicação do projeto",
-  "Suporte após a entrega",
-];
-
-const plans: Plan[] = [
-  {
-    name: "Pacote Essencial",
-    price: "A partir de R$ 400",
-    description: "Tudo o que você precisa para colocar seu negócio online, sem complicação.",
-    items: [
-      "Página única personalizada",
-      "Até 5 seções",
-      "Contato direto pelo WhatsApp",
-      "Domínio Convert + hospedagem por 12 meses",
-      "Projeto pronto e publicado",
-    ],
-    notes: ["Entrega em 3–4 dias úteis", "1 revisão inclusa"],
-    emphasis: true,
-  },
-  {
-    name: "Pacote Profissional",
-    price: "A partir de R$ 1.200",
-    description: "Sistemas personalizados para organizar e automatizar processos do seu negócio.",
-    items: [
-      "Agendamento, orçamento ou fluxos sob medida",
-      "Automação de processos",
-      "SEO otimizado",
-      "Funcionalidades pensadas para sua operação",
-      "Projeto pronto e publicado",
-    ],
-    notes: ["Entrega sob prazo definido no projeto", "2 revisões inclusas"],
-  },
-  {
-    name: "Plano de Suporte",
-    price: "R$ 200/mês",
-    description: "Seu site sempre atualizado, sem você precisar se preocupar.",
-    items: [
-      "Manutenção mensal",
-      "Hospedagem contínua",
-      "Alterações de textos e imagens",
-      "Pequenos ajustes no site",
-      "Suporte prioritário",
-      "Gestão do domínio próprio",
-    ],
-    notes: ["Contratação opcional após a entrega"],
-  },
-  {
-    name: "Adicionais",
-    price: "Conforme o projeto",
-    description: "Adicione recursos extras de acordo com a necessidade do seu projeto.",
-    bullets: true,
-    items: [
-      "Domínio próprio .com.br",
-      "Páginas adicionais",
-      "Seções adicionais",
-      "Formulários personalizados",
-      "SEO otimizado",
-      "Funcionalidades extras",
-    ],
-  },
+  "Ajustes inclusos conforme o pacote",
 ];
 
 function Wordmark({ className = "" }: { className?: string }) {
@@ -350,22 +292,7 @@ function Index() {
           </div>
         </section>
 
-        {/* 3 — Plans & packages */}
-        <section id="planos" className="scroll-mt-20 border-t border-border py-14 sm:py-20">
-          <div className="mb-8 flex flex-col gap-2 sm:mb-10">
-            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-bright">
-              Planos e pacotes
-            </span>
-            <h2 className="max-w-xl font-display text-2xl font-semibold sm:text-3xl">
-              Encontre uma opção para o que você busca
-            </h2>
-          </div>
-          <div className="grid gap-3">
-            {plans.map((plan, i) => (
-              <PlanCard key={plan.name} plan={plan} defaultOpen={i === 0} />
-            ))}
-          </div>
-        </section>
+        <OffersSection whatsapp={WHATSAPP} />
 
         {/* 4 — Contact */}
         <section id="contato" className="scroll-mt-20 pb-14 sm:pb-20">
