@@ -19,29 +19,31 @@ export function OffersSection({ whatsapp }: { whatsapp: string }) {
     </div>
 
     <article className="overflow-hidden rounded-2xl border border-primary/35 bg-card text-card-foreground shadow-lift">
-      <div className="grid gap-7 p-5 sm:p-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
-        <div>
+      <div className="grid gap-5 p-5 sm:p-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-x-10">
+        <div className="min-w-0 lg:col-start-1 lg:row-start-1">
           <h3 className="font-display text-2xl font-semibold">Pacote Essencial</h3>
           <p className="mt-3 font-display text-3xl font-semibold text-primary">A partir de R${terms.essentialFrom}</p>
           <p className="mt-1 text-xs font-medium text-card-muted">Pagamento único</p>
-          <p className="mb-6 mt-4 text-sm leading-relaxed">Seu negócio bem apresentado, com serviços, trabalhos e solicitações organizados em um só lugar.</p>
+          <p className="mt-4 text-sm leading-relaxed">Seu negócio bem apresentado, com serviços, trabalhos e solicitações organizados em um só lugar.</p>
+        </div>
+        <div className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <Benefits items={essentialBenefits} />
+        </div>
+        <dl className="grid min-w-0 gap-4 border-t border-card-border pt-4 text-sm leading-relaxed lg:col-span-2 lg:row-start-3 lg:grid-cols-2 lg:gap-10">
+          <div className="min-w-0"><dt className="font-semibold">Prazo</dt><dd className="mt-1 text-card-muted">Primeira versão em até {terms.firstVersionBusinessDays} dias úteis após receber os materiais e o sinal.</dd></div>
+          <div className="min-w-0"><dt className="font-semibold">Pagamento</dt><dd className="mt-1 text-card-muted">{terms.startPaymentPercent}% para começar e {terms.finalPaymentPercent}% após a aprovação da versão final, antes da publicação.</dd></div>
+        </dl>
+        <div className="min-w-0 lg:col-start-1 lg:row-start-2">
           <ContactButton destination={whatsapp} message="Olá! Tenho interesse no Pacote Essencial e quero conversar sobre meu site.">Quero meu site</ContactButton>
         </div>
-        <div className="grid gap-5">
-          <Benefits items={essentialBenefits} />
-          <dl className="grid gap-3 border-t border-card-border pt-4 text-sm leading-relaxed">
-            <div><dt className="font-semibold">Prazo</dt><dd className="mt-1 text-card-muted">Primeira versão em até {terms.firstVersionBusinessDays} dias úteis após receber os materiais e o sinal.</dd></div>
-            <div><dt className="font-semibold">Pagamento</dt><dd className="mt-1 text-card-muted">{terms.startPaymentPercent}% para começar e {terms.finalPaymentPercent}% após a aprovação da versão final, antes da publicação.</dd></div>
-          </dl>
-          <p className="text-xs leading-relaxed text-card-muted">O estabelecimento confirma os pedidos pelo WhatsApp. Escopo e preço final definidos antes da contratação. As duas rodadas de ajustes devem ser consolidadas e realizadas dentro do escopo aprovado.</p>
-        </div>
+        <p className="text-xs leading-relaxed text-card-muted lg:col-span-2 lg:row-start-4">O estabelecimento confirma os pedidos pelo WhatsApp. Escopo e preço final definidos antes da contratação. As duas rodadas de ajustes devem ser consolidadas e realizadas dentro do escopo aprovado.</p>
       </div>
 
       <div className="border-t border-card-border bg-card-body p-5 sm:p-8">
         <h4 className="mb-5 flex items-center gap-2 font-display text-lg font-semibold"><Globe className="h-4 w-4 text-primary" aria-hidden="true" />Seu endereço na internet</h4>
         <div className="grid gap-5 sm:grid-cols-2 sm:gap-8">
-          <div><p className="text-sm font-semibold">Endereço Convert <span className="text-primary">— incluído</span></p><p className="mt-2 break-words text-sm font-medium">seunegocio.convertstudio.com.br</p><p className="mt-2 text-sm leading-relaxed text-card-muted">Seu site com um endereço personalizado dentro da Convert Studio, sem precisar contratar um domínio próprio.</p></div>
-          <div><p className="text-sm font-semibold">Domínio próprio <span className="text-primary">— +R${terms.ownDomain}</span></p><p className="mt-2 text-sm font-medium">seunegocio.com.br</p><p className="mt-2 text-sm leading-relaxed text-card-muted">Inclui registro de domínio .com.br disponível por {terms.domainYears} ano, em nome do cliente, e configuração. Renovação anual separada.</p></div>
+          <div className="min-w-0"><p className="text-sm font-semibold">Endereço Convert <span className="text-primary">— incluído</span></p><p className="mt-2 text-sm font-medium [overflow-wrap:anywhere]">seunegocio.convertstudio.com.br</p><p className="mt-2 text-sm leading-relaxed text-card-muted">Seu site com um endereço personalizado dentro da Convert Studio, sem precisar contratar um domínio próprio.</p></div>
+          <div className="min-w-0"><p className="text-sm font-semibold">Domínio próprio <span className="text-primary">— +R${terms.ownDomain}</span></p><p className="mt-2 text-sm font-medium [overflow-wrap:anywhere]">seunegocio.com.br</p><p className="mt-2 text-sm leading-relaxed text-card-muted">Inclui registro de domínio .com.br disponível por {terms.domainYears} ano, em nome do cliente, e configuração. Renovação anual separada.</p></div>
         </div>
         <p className="mt-5 border-t border-card-border pt-4 text-xs leading-relaxed text-card-muted">A hospedagem incluída vale por {terms.hostingMonths} meses a partir da publicação. A continuidade após esse período depende de renovação, conforme condições informadas antes da contratação.</p>
       </div>
@@ -59,7 +61,7 @@ export function OffersSection({ whatsapp }: { whatsapp: string }) {
       </article>
       <article className="flex flex-col rounded-2xl border border-border-strong bg-surface p-5 sm:p-6">
         <RefreshCw className="mb-3 h-5 w-5 text-primary-bright" aria-hidden="true" />
-        <div className="flex flex-wrap items-center gap-2"><h3 className="font-display text-lg font-semibold">Atualizações do Site</h3><span className="text-xs text-muted-foreground">Opcional</span></div>
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 sm:flex"><h3 className="min-w-0 font-display text-lg font-semibold">Atualizações do Site</h3><span className="shrink-0 text-xs text-muted-foreground">Opcional</span></div>
         <p className="mt-2 font-display text-xl font-semibold">R${terms.updatesMonthly}/mês</p>
         <p className="mb-4 mt-3 text-sm font-medium leading-relaxed">Pequenas atualizações de conteúdo, com limite mensal.</p>
         <ul className="grid gap-2 text-sm leading-relaxed text-muted-foreground"><li>Trocas simples de textos e imagens.</li><li>Solicitações pelo WhatsApp.</li><li>Contratação opcional após a entrega.</li></ul>
