@@ -12,9 +12,9 @@ import demoBeleza from "@/assets/demo-beleza.jpg";
 import demoVelora from "@/assets/demo-velora.jpg";
 import demoNorden from "@/assets/demo-norden.jpg";
 
-const TITLE = "Convert Studio — Sites que convertem. Sistemas que automatizam.";
+const TITLE = "Convert Studio — Sites que valorizam. Soluções que aproximam.";
 const DESCRIPTION =
-  "Soluções digitais para conectar seu negócio a novos clientes, facilitar o atendimento e fortalecer sua presença online.";
+  "Criamos sites personalizados e identidades visuais para apresentar seu negócio com profissionalismo e facilitar o contato com seus clientes.";
 
 const SITE_URL = "https://convertstudio.com.br/";
 
@@ -74,9 +74,9 @@ const demos: Demo[] = [
     accent: "butter",
   },
   {
-    name: "Agendamento via WhatsApp",
-    label: "Agendamentos",
-    description: "Apresente serviços, valores e trabalhos em uma página própria. A cliente escolhe suas preferências e envia a solicitação de horário pronta pelo WhatsApp. Você confirma por lá.",
+    name: "Solicitações pelo WhatsApp",
+    label: "Solicitações",
+    description: "Apresente serviços, valores e trabalhos em uma página própria. O cliente envia suas preferências pelo WhatsApp e o estabelecimento confirma o atendimento — sem agenda automática.",
     url: "https://demo-aura.convertstudio.com.br/",
     image: demoAgenda,
     accent: "leaf",
@@ -198,13 +198,13 @@ function Index() {
                 Convert Studio
               </p>
               <h1 className="max-w-2xl font-display text-[2.25rem] font-semibold leading-[1.04] sm:text-5xl md:text-[3.5rem]">
-                Sites que convertem.
+                Sites que valorizam.
                 <br />
-                <span className="text-primary-bright">Sistemas que automatizam.</span>
+                <span className="text-primary-bright">Soluções que aproximam.</span>
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Soluções digitais para conectar seu negócio a novos clientes, facilitar o atendimento e
-                fortalecer sua presença online.
+                Criamos sites personalizados e identidades visuais para apresentar seu negócio com
+                profissionalismo e facilitar o contato com seus clientes.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
@@ -236,7 +236,9 @@ function Index() {
               Veja o que a Convert pode criar para o seu negócio
             </h2>
             <p className="max-w-2xl text-[0.9375rem] leading-relaxed text-muted-foreground sm:text-base">
-             Explore projetos pensados para diferentes necessidades e formas de atendimento.
+              Explore projetos pensados para diferentes necessidades e formas de atendimento. Os
+              projetos apresentados são exemplos de possibilidades — as funcionalidades contratadas
+              dependem do escopo aprovado com você.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
@@ -307,7 +309,7 @@ function Index() {
             />
             <div className="relative">
               <h2 className="max-w-lg font-display text-2xl font-semibold leading-tight sm:text-[2rem]">
-                Seu próximo passo começa aqui ↓
+                Vamos apresentar seu negócio do jeito que ele merece?
               </h2>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
@@ -317,7 +319,7 @@ function Index() {
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:bg-primary-bright active:scale-[0.98]"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                  Solicitar Orçamento
+                  Conversar no WhatsApp
                 </a>
                 <a
                   href={INSTAGRAM}
@@ -341,7 +343,7 @@ function Index() {
       <Wordmark />
 
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-        Criamos experiências digitais sob medida para simplificar processos e facilitar o dia a dia.
+        Criamos sites personalizados e identidades visuais para negócios de diferentes segmentos.
       </p>
 
       <p className="mt-2 text-sm font-medium text-foreground">
